@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="icon" href="./assets/favicon.png" type="image/png" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<style>
+    .resources {
+        /*         max-width: 1440px; */
+        margin: 0 auto;
+        /* padding: 20px; */
+        background-color: #f8f0ff;
+    }
+
+    .resources-title {
+        text-align: center;
+        color: #2D1B4D;
+        font-size: 2rem;
+        margin-bottom: 40px;
+        font-weight: 700;
+    }
+
+    .featured-article {
+        margin-bottom: 50px;
+
+    }
+
+    .featured-article img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 50%;
+        width: 50%;
+        border-radius: 10px;
+        /* margin-bottom: 20px; */
+    }
+
+    .titledfvdfb {
+        font-size: 2.5rem;
+        text-align: center;
+        color: #000;
+        padding: 30px 0 0;
+        line-height: 1.5;
+        width: 60%;
+        margin: 0 auto 20px;
+    }
+
+    .article-meta {
+        color: #666;
+        font-size: 0.9rem;
+    }
+
+    .articles-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+
+
+    .article-card img {
+        width: 300px;
+        height: 210px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .article-content {
+        flex: 1;
+    }
+
+    .article-content h3 {
+        font-size: 1.2rem;
+        color: #000;
+        margin: 0 0 10px 0;
+    }
+
+    .article-content p {
+        color: #666;
+        margin: 10px 0;
+        line-height: 1.5;
+    }
+
+    .pb-5 {
+        padding-bottom: 80px;
+    }
+
+    .load-more {
+        display: block;
+        width: 150px;
+        margin: 40px auto;
+        padding: 12px 24px;
+        background-color: #2D1B4D;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .articles-list {
+        padding-top: 30px
+    }
+
+    @media (max-width: 768px) {
+        .article-card {
+            flex-direction: column;
+        }
+
+        .article-card img {
+            width: 100%;
+            height: 200px;
+        }
+
+        .containers {
+            position: relative;
+            width: 100% !important;
+            height: 100% !important;
+            overflow: hidden;
+        }
+
+        .social-media a {
+            width: 80%;
+            margin-bottom: 10px;
+        }
+
+        .text-overlay h2 {
+            font-size: 22px !important;
+            margin-bottom: 19px !important;
+            line-height: 1.2 !important;
+        }
+
+        .text-overlay p {
+            font-size: 16px !important;
+            line-height: 1.2 !important;
+        }
+    }
+
+    .article-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .article-container h1,
+    .article-container h2,
+    .article-container h3,
+    .article-container h4,
+    .article-container h5,
+    .article-container h6,
+    .article-container li {
+        text-align: start;
+
+    }
+
+    .article-container h1 {
+        font-size: 2rem;
+        color: #2D1B4D;
+        margin-bottom: 15px;
+    }
+
+    .article-container img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 50%;
+        width: 50%;
+        border-radius: 10px;
+    }
+
+    .article-container p,
+    .article-container li {
+        font-size: 18px;
+        color: #000;
+        line-height: 2;
+        text-align: justify;
+    }
+
+    .article-container h4,
+    .article-container strong {
+        font-size: 20px;
+        color: #000;
+        line-height: 50px;
+        font-weight: 700;
+        text-align: justify;
+    }
+
+    .article-meta {
+        font-size: 0.9rem;
+        color: #888;
+        margin-bottom: 10px;
+    }
+
+    .social-media {
+        width: 90%;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .social-media a {
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 0;
+        border: solid 1px #eaeaea;
+        background: #fff;
+        gap: 20px;
+        font-weight: 600;
+        font-size: 16px;
+        color: #333;
+        cursor: pointer;
+    }
+
+    .social-media a img {
+        margin-bottom: 5px;
+        margin-right: 15px;
+    }
+
+    .what-next {
+        padding: 35px;
+        padding-bottom: 60px
+    }
+
+    .next-text {
+        width: 80%;
+        margin: 0px auto;
+        border-top: solid 1px #eaeaea;
+        padding: 35px 35px 0 35px;
+        font-size: 35px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .section {
+        margin-top: 20px;
+
+    }
+
+    .containers {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .containers img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .text-overlay {
+        position: absolute;
+        bottom: 10%;
+        left: 8%;
+        color: white;
+        z-index: 2;
+    }
+
+    .text-overlay h2 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        line-height: 2;
+    }
+
+    .text-overlay p {
+        font-size: 20px;
+        max-width: 80%;
+        line-height: 2;
+    }
+
+    /* Overlay effect using ::before */
+    .containers::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        /* Dark overlay */
+        z-index: 1;
+    }
+
+    /* Subtle blur effect using ::after */
+    .containers::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: #2d144152;
+        z-index: 1;
+    }
+</style>
+
+<body>
+    <nav>
+        <div class="image-container">
+            <a href="index.html">
+                <img src="Rectangle 2.png" alt="Background Image" class="background-image">
+                <img src="strategic solutions logo 2.svg" alt="Overlay Image" class="overlay-image">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="#about" onclick="scrollToContainer('container1')">About</a>
+            <a href="#services" onclick="scrollToContainer('container2')">Services</a>
+            <a href="#work" onclick="scrollToContainer('container3')">Work</a>
+            <a href="#resource" onclick="scrollToContainer('container4')">Resources</a>
+            <a href="#contact" onclick="scrollToContainer('container5')">Contact</a>
+            <a href="certificate.html" style="margin-left:80px">Certificates<img style="    margin-left: 5px;
+                width: 15px;" src="assets/redirect.png"></a>
+
+        </div>
+
+        <div class="social-icons">
+            <a href="#"> <img src="./assets/Vector 1.png" alt="social-medias" class="social-medias"> </a>
+
+            <a href="https://www.facebook.com/raji.ramanan.58/" target="_blank"> <img src="Social Media card.svg"
+                    alt="social-media"> </a>
+            <a href="https://www.linkedin.com/in/rajiramanangphr/" target="_blank"><img src="Social Media card (1).svg"
+                    alt="social-media"></a>
+            <a href="https://www.instagram.com/rajiram1963/" target="_blank"><img src="Social Media card (2).svg"
+                    alt="social-media"></a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="resource">
+        <div class="featured-article">
+            <h2 class="titledfvdfb"> </h2>
+            <h6 class="shortDes"></h6>
+            <div class="article-meta" style="text-align: center;"> </div>
+            <img src="./assets/resources2.png" alt="Generational Difference">
+            <div class="article-container">
+                <!-- <div>
+                    <h4>Unlocking Agile Leadership: Key Takeaways from Our High-Potential Leadership Program</h4>
+                    <p> Leadership is no longer about navigating the known—it’s about thriving in the unknown. This
+                        reality
+                        was at the heart of our recent NextGen Leadership Program, designed and executed by Strategic
+                        Solutions Consultants. Addressing a full cohort of high-potential leaders, we explored the
+                        essential
+                        qualities of Agile Leadership, delving into strategies for adapting to constant change and
+                        fostering
+                        success in today’s workplace.</p>
+                    <h4> A Special Thanks to Our Guest Speakers</h4>
+                    <p> We extend our heartfelt gratitude to Tatiana Koleva and Ashish Raval, MS, MBA, whose Agile
+                        Leadership expertise and inspiring success stories brought unparalleled value to the session.
+                        Their
+                        insights into leadership evolution and adaptability, strengthened by the Georgetown connection,
+                        underscored the importance of collaboration, synergy, and camaraderie in shaping future-ready
+                        leaders.</p>
+                    <h4> Preparing for a World of Constant Change</h4>
+                    <p> Participants were highly engaged, eager to explore how to prepare for the challenges of a
+                        workplace
+                        where the only certainty is constant change. The discussion emphasized how leaders need to
+                        evolve
+                        continuously, moving beyond traditional roles to embody new dimensions of leadership.</p>
+                    <h4>Key roles highlighted during the session included:</h4>
+                    <ul>
+                        <li> Connector: Building relationships and fostering collaboration.</li>
+                        <li>
+                            Influencer: Guiding and inspiring teams with purpose and clarity.</li>
+                        <li>
+                            Enabler: Empowering teams to overcome obstacles and achieve their goals.</li>
+                        <li>
+                            Learner: Embracing growth and adaptability to lead effectively. </li>
+                    </ul>
+                    <p>
+
+                        These roles, while equally important, complement the more traditional leadership functions of
+                        being
+                        a Strategist, Visionary, and Observer.</p>
+
+                    <img src="./assets/leadership.png" class="img-fluid" />
+                    <h4>Key Action Point: Transforming 1-on-1s</h4>
+                    <p>
+
+                        A pivotal takeaway from our session was the emphasis on the 1-on-1 meeting, redefined as a space
+                        for
+                        team members to take ownership.
+                        Instead of focusing on metrics, goals, and achievements, leaders should use these sessions to:
+                    </p>
+                    <ul>
+                        <li>
+                            Create a safe space for team members to share their challenges, dilemmas, and support needs.
+                        </li>
+                        <li>
+                            Listen actively to understand their perspectives and remove barriers. </li>
+                        <li>
+                            Shift the focus to their development and well-being before discussing performance. </li>
+                    </ul>
+                    <p>This reimagined approach not only builds trust but also creates a supportive environment where
+                        team
+                        members feel valued and empowered.
+                    </p>
+                    <h4> Agile Leadership: Breaking Traditional Boundaries
+                    </h4>
+                    <p>Agile leadership demands a departure from rigid hierarchies, structures, and legacy processes.
+                        While
+                        these elements serve as a foundation, they must be revisited and revised to meet the dynamic
+                        needs
+                        of the modern workplace. Agile leaders break through these boundaries to foster an environment
+                        of
+                        innovation, inclusion, and adaptability.
+                    </p>
+                    <h4>
+                        Leadership in an Era of Evolution</h4>
+                    <p>As we concluded the session, one overarching theme stood out: leadership is a journey of
+                        continuous
+                        evolution. Today’s leaders must balance strategy with empathy, vision with action, and influence
+                        with empowerment. By acting as connectors, enablers, and learners, leaders can guide their teams
+                        through change with resilience and confidence. This session was a testament to the
+                        transformative
+                        power of agile thinking and the boundless potential of a motivated, forward-thinking leadership
+                        cohort. We are excited to continue enabling leaders to embrace change, empower their teams, and
+                        redefine leadership for the future. <strong>Agility is not just a skill—it’s a mindset. It’s the
+                            foundation
+                            for thriving in an ever-changing world.</strong>
+                    </p>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="social-media pb-5">
+            <a><img src="./assets/facebook1.png" alt="social-media">Share on Facebook</a>
+            <a><img src="./assets/linkedin1.png" alt="social-media">Share on Linkedin</a>
+        </div>
+    </div>
+
+
+
+    <h3 class="next-text">What Next to Read</h3>
+
+
+    <div class="container">
+        <div class="what-next row justify-content-center">
+            <!-- <div class="containers">
+            <img src="./assets/resources4.jpeg" alt="Background Image">
+            <div class="text-overlay">
+                <h2>How to align D&I with business strategy</h2>
+                <p>D&I training is a popular trend in business, helping to align staff efforts with the
+                    organization's broader vision.</p>
+            </div>
+        </div>
+        <div class="containers">
+            <img src="./assets/resources3.png" alt="Background Image">
+            <div class="text-overlay">
+                <h2>Cultural differences in managing performance</h2>
+                <p>A key challenge for HR is how to manage performance for a wide variety of cultures. Find
+                    out
+                    how they do it</p>
+            </div>
+        </div> -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-top">
+                <img src="./Frame 63.svg" alt="Strategic Solutions" class="logos">
+                <div class="search-box">
+                    <input type="email" class="search-input" placeholder="Enter your email to get the latest update">
+                    <button class="search-btn">subscribe</button>
+                </div>
+            </div>
+
+
+
+            <div class="social-links">
+                <div class="footer-nav">
+                    <a href="#">Home</a>
+                    <a href="#">Services</a>
+                    <a href="#">Our Works</a>
+                    <a href="#">Resources</a> <a href="#">Certificates <img style="    margin-left: 5px;
+          width: 15px;" src="assets/redirect.png"></a>
+
+                </div>
+
+
+                <div class="footer-navs">
+                    <div class="social-icon-footer"><img src="youtube.svg" /></div>
+                    <a href="https://www.linkedin.com/in/rajiramanangphr/" target="_blank">
+                        <div class="social-icon-footer"><img src="linkedin.svg" /></div>
+                    </a>
+                    <a href="https://www.instagram.com/rajiram1963/" target="_blank">
+                        <div class="social-icon-footer"><img src="instagram.svg" /></div>
+                    </a>
+                    <a href="https://x.com/rajeswariramana" target="_blank">
+                        <div class="social-icon-footer"><img src="twitter.svg" /></div>
+                    </a>
+                    <a href="https://www.facebook.com/raji.ramanan.58/" target="_blank">
+                        <div class="social-icon-footer"><img src="facebook.svg" /></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Strategic Solutions HR Consultants LLC 2025. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<script>
+    // Step 1: Get the article ID from the URL
+    const params = new URLSearchParams(window.location.search);
+    const articleId = params.get("id");
+
+    if (!articleId) {
+        console.error("No article ID found in the URL.");
+    } else {
+        fetchArticleDetails(articleId);
+    }
+
+    // Step 2: Fetch Article Details using API
+    async function fetchArticleDetails(id) {
+        try {
+            const response = await fetch(`https://api.strategicsolutionshrconsultants.com/api/home/getresource?id=${id}`); // Adjust API URL
+            const article = await response.json();
+
+            if (!article) {
+                console.error("Article not found.");
+                return;
+            }
+            console.log(article.data, "articlearticlearticle")
+
+            // Step 3: Populate the Featured Article
+
+            document.querySelector(".shortDes").innerHTML = article.data.short_des;
+            document.querySelector(".titledfvdfb").innerHTML = article.data.title;
+            document.querySelector(".article-meta").innerHTML = new Date(article.data.updatedAt).toLocaleDateString();
+            document.querySelector(".featured-article img").src = `data:image/png;base64,${article.data.image_url}`;
+            document.querySelector(".article-container").innerHTML = article.data.description
+
+        } catch (error) {
+            console.error("Error fetching article details:", error);
+        }
+    }
+</script>
+<script>
+    let currentPage = 1; // Track current page
+    const pageSize = 4;  // Number of articles per request
+    const articlesList = document.querySelector('.what-next');
+
+    // Function to fetch articles
+    async function fetchArticles(page) {
+        try {
+            const response = await fetch(`https://api.strategicsolutionshrconsultants.com/api/home/getimages?page=${page}&limit=${pageSize}`);
+            const data = await response.json();
+            console.log(data, "datadata")
+            if (!Array.isArray(data.data) || data.data.length === 0) {
+                loadMoreButton.style.display = 'none'; // Hide button if no more articles
+                return;
+            }
+            const randomArticles = data.data.sort(() => 0.5 - Math.random()).slice(0, 2);
+
+            // Append articles dynamically
+            randomArticles.forEach(article => {
+                const articleElement = document.createElement('div');
+                articleElement.classList.add('col-md-6');
+                const imageSrc = `data:image/png;base64,${article.image_url}`;
+
+                articleElement.innerHTML = `  <a href="innerpage.html?id=${article._id}" class="article-link">
+                    <div class="containers">
+                <img src="${imageSrc}" alt="${article.title}">
+                <div class="text-overlay">
+                    <h2>${article.title}</h2>
+                    <p>${article.short_des.length > 100 ? article.short_des.substring(0, 100) + '...' : article.short_des}</p>
+                </div></div></a>
+                    `;
+
+                articlesList.appendChild(articleElement);
+            });
+
+        } catch (error) {
+            console.error('Error fetching articles:', error);
+        }
+    }
+
+    // Load initial articles
+    fetchArticles(currentPage);
+
+</script>
+
+
+</html>

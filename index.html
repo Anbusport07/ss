@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="./assets/favicon.png" type="image/png" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <style>
+        .slick-dots {
+            display: none !important;
+        }
+
+        .slick-prev,
+        .slick-next {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .slick-prev {
+            left: -35px;
+            /* adjust as needed */
+        }
+
+        .slick-next {
+            right: -35px;
+            /* adjust as needed */
+        }
+
+        .article-link {
+            text-decoration: none !important;
+        }
+
+        .slick {
+            display: block !important;
+            visibility: visible !important;
+            min-height: 100px;
+        }
+
+        .work-item {
+            margin: 0 10px
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+
+
+    <nav>
+        <div class="image-container">
+            <a href="index.html">
+                <img src="Rectangle 2.png" alt="Background Image" class="background-image">
+                <img src="strategic solutions logo 2.svg" alt="Overlay Image" class="overlay-image">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="#about" onclick="scrollToContainer('container1')">About</a>
+            <a href="#services" onclick="scrollToContainer('container2')">Services</a>
+            <a href="#work" onclick="scrollToContainer('container3')">Work</a>
+            <a href="#resource" onclick="scrollToContainer('container4')">Resources</a>
+            <a href="#contact" onclick="scrollToContainer('container5')">Contact</a>
+            <a href="certificate.html" style="margin-left:80px">Certificates<img style="    margin-left: 5px;
+                width: 15px;" src="assets/redirect.png"></a>
+
+        </div>
+
+        <div class="social-icons">
+            <a href="#"> <img src="./assets/Vector 1.png" alt="social-medias" class="social-medias"> </a>
+
+            <a href="https://www.facebook.com/raji.ramanan.58/" target="_blank"> <img src="Social Media card.svg"
+                    alt="social-media"> </a>
+            <a href="https://www.linkedin.com/company/strategic-solutions-consultants/posts/?feedView=all"
+                target="_blank"><img src="Social Media card (1).svg" alt="social-media"></a>
+            <a href="https://www.instagram.com/rajiram1963/" target="_blank"><img src="Social Media card (2).svg"
+                    alt="social-media"></a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- <section class="hero">
+        
+        <h1 class="animate__animated animate__backInDown">UNLEASHING POTENTIAL.</h1>
+        <h2 >BUILDING FUTURES.</h2>
+    </section> -->
+    <div class="hero-container">
+        <div class="background-image-hero"></div>
+        <div class="overlay-top-right"></div>
+        <div class="overlay-left"></div>
+        <div class="content-hero">
+            <h1 class="animate__animated animate__backInDown">Unleashing Potential.</h1>
+            <h1 class="animate__animated animate__backInDown">Building Futures.</h1>
+        </div>
+    </div>
+    <section class="trusted-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="trusted-text">
+                        <h2 class="animate__animated animate__fadeInLeft">Trusted by Visionary<br>Leaders Across
+                            Industries</h2>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="client-logos">
+                        <div class="client-logos-wrapper">
+                            <img src="./assets/BAYADA_simplified_logo_color 2.png" alt="Bayada" class="client-logo">
+                            <img src="./assets/avid.png" alt="Avid" class="client-logo">
+                            <img src="./assets/capital.png" alt="Capital Group" class="client-logo1">
+                            <img src="./assets/netcom.png" alt="NetCom Learning" class="client-logo">
+
+                            <!-- Duplicate the logos for seamless effect -->
+                            <img src="./assets/BAYADA_simplified_logo_color 2.png" alt="Bayada" class="client-logo">
+                            <img src="./assets/avid.png" alt="Avid" class="client-logo">
+                            <img src="./assets/capital.png" alt="Capital Group" class="client-logo1">
+                            <img src="./assets/netcom.png" alt="NetCom Learning" class="client-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- 2nd container -->
+    <div class="testimonial-section">
+        <div class="container">
+            <div class="pattern-overlay"></div>
+            <h2 class="section-title">What clients say about us?</h2>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <img src="./assets/Union.png" class="shape-bg">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="image 14.svg" alt="Franklyn D Reynolds" class="profile-image">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="author-info">
+                                <div class="author-name">Franklyn D Reynolds</div>
+                                <div class="author-title">President & CEO, UIL Holdings</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="quote">
+                            <img src="./quote.png" class="quotes">
+                            From the moment I interviewed Raji to join our team,
+                            I was impressed with her skill to quickly grasp issues
+                            and develop creative solutions. She did so during the
+                            interview and throughout her tenure with JUSA.<br> Raji's human
+                            resources skill set is so broad that I never hesitate to enlist
+                            her support when faced with a challenge out side of the HR realm.
+                            She always had an idea or offered perspective on the situation to
+                            help resolve the issue. Raji was a great colleague and was a joy to
+                            work with.
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="./assets/Union.png" class="shape-bg">
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="image.svg" alt="Kevin Walker" class="profile-image">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="author-info">
+                                <div class="author-name">Kevin Walker</div>
+                                <div class="author-title">President and Chief Executive Officer
+                                    Duquesne Light Holdings, Inc</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="quote">
+                            <img src="./quote.png" class="quotes">
+                            WOW! What a talented, experienced and effective HR leader. It is hard to limit Raji's area
+                            of
+                            expertise as she has immense skills in so many areas of the HR landscape. I relied on her
+                            advice
+                            in many areas outside of Talent Management and Diversity which was her forte, and she never
+                            seemed to be outside of her comfort zone. <br>Raji could have easily contributed several
+                            levels
+                            above the role in which we hired her. Besides being a highly effective leader, she is a
+                            pleasure
+                            to work with and takes on challenges and organizational change with a can-do spirit that is
+                            infectious. I look forward to working with Raji again in any capacity.
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="./assets/Union.png" class="shape-bg">
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="./assets/testi1.png" alt="William Yong" class="profile-image">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="author-info">
+                                <div class="author-name">William Yong</div>
+                                <div class="author-title">Managing Director at Binnies</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="quote">
+                            <img src="./quote.png" class="quotes">
+                            Raji was Black & Veatch's Regional HR Director for Asia Pacific and the Middle East, based
+                            in Singapore.<br>
+
+                            It was a pleasure working with her—she brought a fresh approach to HR, aligning it closely
+                            with business lines. Raji excelled in her role and collaborated effectively with senior
+                            executives. She led key improvements in talent management and employee engagement.
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="./assets/Union.png" class="shape-bg">
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="assets/testi2.png" alt="Teodor Simeonov, CPA" class="profile-image">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="author-info">
+                                <div class="author-name">Teodor Simeonov, CPA</div>
+                                <div class="author-title">Managing Director, Beyond Data</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="quote">
+                            <img src="./quote.png" class="quotes">
+                            I’ve had the pleasure of working with Raji for over 5 years. She brings a rare blend of
+                            analytical brilliance, executional strength, interpersonal finesse, and sharp intuition.
+                            <br>
+                            Her public speaking skills are exceptional, and what truly sets her apart is her empathy—she
+                            consistently offers thoughtful, balanced solutions to complex, conflicting interests.
+                            Despite being in different functions and time zones, I regularly seek her unbiased
+                            perspective. Raji is a true franchise player.
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <img src="./assets/Union.png" class="shape-bg">
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="assets/testi3.png" alt="Atul Khosla" class="profile-image">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="author-info">
+                                <div class="author-name">Atul Khosla</div>
+                                <div class="author-title">Founder Leadership et` Humanite </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="quote">
+                            <img src="./quote.png" class="quotes">
+                            Since August 2021, Raji has played an instrumental role in the success of the LEH Open
+                            Mentoring Program. With over 125 mentees across 25+ countries, the program made a meaningful
+                            impact—thanks to her unwavering commitment and generosity.
+                            <br>
+                            Her dedication to mentoring, her gift of time, and her belief in paying it forward have
+                            helped shape the lives and aspirations of many.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 3rd container -->
+    <div class="founder-container" id="container1">
+        <div class="card-container">
+            <div class="purple-background"></div>
+            <div class="content-wrapper">
+                <h1 class="title">Founder & Principal
+                </h1>
+                <img src="./assets/image 10.png" alt="Founder" class="founder-image" />
+                <h2 class="name">Raji Ramanan</h2>
+                <p class="credentials" style="text-align: center;">
+                    ACC, SHRM-SCP™,CHRE, GPHR,<br>
+                    AI Master Trainer</p>
+            </div>
+        </div>
+
+
+        <div class="founder-content">
+            <div class="about-heading">
+                <h1 class="about-title">Meet Our Founder <span style="color: #8B49AA;">—</span></h1>
+
+            </div>
+            <p>Raji Ramanan is a seasoned Global HR Leader, ICF-Certified Executive Leadership Coach, Career
+                Accelerator, Organizational Development Consultant, and Team Effectiveness Facilitator with a career
+                spanning 17 countries and 4 continents.
+                <br><br>
+                Her passion for unlocking human potential and delivering transformative business results has shaped
+                Strategic Solutions into a trusted partner for organizations worldwide.
+            </p>
+        </div>
+    </div>
+
+    <!-- 4th container -->
+    <div class="we-container">
+
+        <div class="image-group">
+            <!-- <img src="./assets/what-we-do.png"> -->
+            <img src="./assets/corporate-team-workers-it-company 1.png" alt="Team discussing" class="main-image">
+            <img src="./assets/bussiness-people-working-team-office 1.png" alt="Team collaboration"
+                class="secondary-image">
+            <div class="dot-pattern"></div>
+        </div>
+
+        <div class="we-content">
+
+            <div class="what-heading">
+                <h1 class="what-title">What We Do <span style="color: #8B49AA;">—</span></h1>
+
+            </div>
+            <p>At Strategic Solutions Consultants, we specialize in empowering
+                organizations to align their strategy, structure, and leadership to drive impactful growth.
+                Through tailored interventions, we foster team effectiveness, establish and sustain inclusive cultures,
+                and optimize human capital potential.
+                <br>
+                <br> Our focus areas include HR strategy, leadership alignment and coaching, organizational
+                effectiveness,
+                DEIB advisory and training, and career coaching.
+            </p>
+        </div>
+    </div>
+
+    <!-- 5th container -->
+
+
+    <div class="services-container" id="container2">
+        <div class="clipped-div">
+
+        </div>
+        <div class="services-header">
+            <h2>Our Services —</h2>
+            <p>Empowering leaders, fostering <br>team effectiveness,<br> and building
+                inclusive<br> environments, to unlock<br> businesses' true potential.</p>
+            <br>
+            <p>We co-create these experiences <br>with our clients, using our <br>expertise
+                and their context to <br>customize the offerings</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-item" style="margin-top:15px">
+                <img src="./Vector.svg" alt="Leadership" class="service-icon">
+                <h3 class="service-title">Leadership <br>Assessment & Coaching</h3>
+            </div>
+
+            <div class="service-item" style="margin-top:15px">
+                <img src="./2.svg" alt="Strategy" class="service-icon">
+                <h3 class="service-title">Strategy & Goals<br> Facilitation</h3>
+            </div>
+
+            <div class="service-item">
+                <img src="./3.svg" alt="Team" class="service-icon">
+                <h3 class="service-title">Team Effectiveness & <br> Alignment</h3>
+            </div>
+
+            <div class="service-item">
+                <img src="./4.svg" alt="Culture" class="service-icon">
+                <h3 class="service-title">Cultural Assessment & <br>Training</h3>
+            </div>
+
+            <div class="service-item">
+                <img src="./5.svg" alt="Career" class="service-icon">
+                <h3 class="service-title">Career Coaching</h3>
+            </div>
+
+            <div class="service-item">
+                <img src="./6.svg" alt="DEIB" class="service-icon">
+                <h3 class="service-title">DEIB Advisory<br>And Training</h3>
+            </div>
+
+            <div class="service-item">
+                <img src="./7.svg" alt="Skills" class="service-icon">
+                <h3 class="service-title">Leadership Skills <br>Training</h3>
+            </div>
+
+            <div class="service-item">
+                <img src="./8.svg" alt="Organizational" class="service-icon">
+                <h3 class="service-title">Organizational<br> Effectiveness <br>Consulting</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 6th container -->
+
+    <div class="our-work-container" id="container3">
+        <div class="container">
+            <div class="work-header">
+                <div class="what-heading">
+                    <h1 class="what-title">Our Work <span style="color: #8B49AA;">—</span></h1>
+
+                </div>
+                <p class="work-description">The best of our work, developed with over 30 years of expertise,
+                    consistently delivers proven success, earning the loyalty of clients who consistently return for the
+                    exceptional results we deliver.
+                </p>
+            </div>
+
+            <div class="work-grid">
+                <div class="work-item">
+                    <a href="innerpage-work.html" class="article-link">
+                        <img src="./assets/work3.png" alt="LEAD Program Cohort-1" class="work-image">
+                        <h3>Winning Ways At Work </h3>
+                        <p>Structured sessions led our by expert facilitators equipping participants with practical
+                            strategies to navigate workplace challenges, drive high-performing teams, and cultivate a
+                            growth-oriented mindset.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="work-item">
+                    <a href="innerpage-work.html" class="article-link">
+                        <img src="./assets/work2.png" alt="HPWT Initiatives" class="work-image">
+                        <h3>Agile Leadership 3.0</h3>
+                        <p>We equip leaders with the tools to navigate uncertainty, accelerate value delivery, and
+                            sustain
+                            competitive advantage in the digital age. Our framework integrates Lean-Agile methodologies,
+                            servant leadership, and decentralized decision-making, enabling leaders to drive
+                            organizational
+                            agility, foster adaptive teams, and implement scalable transformation strategies.</p>
+                    </a>
+                </div>
+
+                <div class="work-item">
+                    <a href="innerpage-work.html" class="article-link">
+                        <img src="./assets/work1.png" alt="PHR/SPHR Training" class="work-image">
+                        <h3>PIVOT Leadership Program</h3>
+                        <p>The PIVOT Leadership Program is designed to help leaders Prepare for change, Identify
+                            opportunities for growth, Validate strengths and areas for development, Optimize leadership
+                            potential, and Transform into high-impact leaders.
+                        </p>
+                    </a>
+                </div>
+                <div class="work-item">
+                    <a href="innerpage-work.html" class="article-link">
+                        <img src="./assets/work2.png" alt="HPWT Initiatives" class="work-image">
+                        <h3>Agile Leadership 3.0</h3>
+                        <p>We equip leaders with the tools to navigate uncertainty, accelerate value delivery, and
+                            sustain
+                            competitive advantage in the digital age. Our framework integrates Lean-Agile methodologies,
+                            servant leadership, and decentralized decision-making, enabling leaders to drive
+                            organizationalcontainer4
+                            agility, foster adaptive teams, and implement scalable transformation strategies.</p>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="slick">
+
+            </div> -->
+        </div>
+    </div>
+
+    <!-- 7th container -->
+    <div class="resources-container" id="container4">
+        <div class="container">
+            <div class="resources-header">
+
+                <div class="what-heading mt-5">
+                    <h1 class="what-title">Resources <span style="color: #8B49AA;">—</span></h1>
+
+                </div>
+                <a href="resource.html" class="read-more mt-5">Read More</a>
+            </div>
+
+            <p class="resources-description">
+                At Strategic Solutions Consultants, our clients inspire us to redefine excellence and unlock the true
+                potential of their teams.
+            </p>
+
+            <div class="resources-grid">
+                <div class="resource-item ">
+                    <a href="innerpage.html" class="article-link">
+                        <img src="./assets//resource1.png" alt="Business Strategy" class="resource-image">
+                        <div class="resource-content">
+                            <h3>Introducing AI-STRIDE™ Our Proprietary Model</h3>
+                            <p>Empowering organizations STRIDE into AI with purpose and impact—unlocking greater human
+                                potential at work through human-centered implementation.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="resource-item ">
+                    <a href="innerpage.html" class="article-link">
+                        <img src="./assets/resorce2.png" alt="Business Strategy" class="resource-image">
+                        <div class="resource-content">
+                            <h3>AI-STRIDE™ in Action for HR Efficiency</h3>
+                            <p>Demonstrating the AI-STRIDE™ framework’s potential to optimize every stage of the
+                                employee lifecycle, with an ethical deployment of AI that keeps both the user and
+                                business at the heart of each stage.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="resource-item ">
+                    <a href="innerpage.html" class="article-link">
+                        <img src="./assets//resource 3.png" alt="Business Strategy" class="resource-image">
+                        <div class="resource-content">
+                            <h3>PHR/SPHR Training</h3>
+                            <p>Guiding HR professionals with comprehensive PHR/SPHR training to build expertise and
+                                drive strategic impact.</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- 8th container -->
+    <div class="contact-container" id="container5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 p-5">
+                    <div class="contact-form">
+                        <div class="contact-title">
+                            <h2>Get in <span>Touch</span></h2>
+                            <p class="contact-subtitle">We're here to empower your journey toward excellence.</p>
+                        </div>
+
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Name *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" placeholder="Phone number *" required>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-select">
+                                    <option>How did you find us?</option>
+                                    <option>Google</option>
+                                    <option>Social Media</option>
+                                    <option>Referral</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="submit-btn">SEND</button>
+                        </form>
+
+                        <div class="contact-info">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="info-item">
+                                        <img src="./phone.svg" alt="Strategic Solutions" class="logos_img">
+                                        <div>
+                                            <p class="m-0">PHONE</p>
+                                            <a href="tel:9499292599"> 9499292599</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="info-item">
+                                        <img src="mail.svg" alt="Strategic Solutions" class="logos_img">
+                                        <div>
+                                            <p class="m-0">EMAIL</p>
+                                            <a href="mailto:rajramanan@strategisolutionsconsultants.com"> <span
+                                                    class="mailid">rajramanan@strategisolutionsconsultants.com</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 p-5" style="background-color: #2d1441;">
+                    <div class="map-container">
+                        <div id="map" class="map-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-top">
+                <img src="./Frame 63.svg" alt="Strategic Solutions" class="logos">
+                <div class="search-box">
+                    <input type="email" class="search-input" placeholder="Enter your email to get the latest update">
+                    <button class="search-btn">subscribe</button>
+                </div>
+            </div>
+
+
+
+            <div class="social-links">
+                <div class="footer-nav">
+                    <a href="#">Home</a>
+                    <a href="#">Services</a>
+                    <a href="#">Our Works</a>
+                    <a href="#">Resources</a> <a href="#">Certificates <img style="    margin-left: 5px;
+                width: 15px;" src="assets/redirect.png"></a>
+
+                </div>
+
+                <div class="footer-navs">
+                    <div class="social-icon-footer"><img src="youtube.svg" /></div>
+                    <a href=" https://www.linkedin.com/company/strategic-solutions-consultants/posts/?feedView=all"
+                        target="_blank">
+                        <div class="social-icon-footer"><img src="linkedin.svg" /></div>
+                    </a>
+                    <a href="https://www.instagram.com/rajiram1963/" target="_blank">
+                        <div class="social-icon-footer"><img src="instagram.svg" /></div>
+                    </a>
+                    <a href="https://x.com/rajeswariramana" target="_blank">
+                        <div class="social-icon-footer"><img src="twitter.svg" /></div>
+                    </a>
+                    <a href="https://www.facebook.com/raji.ramanan.58/" target="_blank">
+                        <div class="social-icon-footer"><img src="facebook.svg" /></div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Strategic Solutions HR Consultants LLC 2025. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(".testimonials").slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            margin: 70,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+            nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+        $('.work-grid').slick({
+            // $(worksContainer).slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+            nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+
+    </script>
+    <script>
+        async function fetchWorks() {
+            try {
+                const response = await fetch(`https://api.strategicsolutionshrconsultants.com/api/home/getworks`);
+                const data = await response.json();
+
+                if (data && data.data) {
+                    const worksContainer = document.querySelector(".slick");
+
+                    // Clear existing content
+                    worksContainer.innerHTML = "";
+
+                    // Populate slider with API data
+                    data.data.forEach(work => {
+                        const workItem = document.createElement("div");
+                        workItem.classList.add("work-item");
+                        workItem.innerHTML = `
+                        
+                         <a href="innerpage-work.html?id=${work._id}" class="article-link">
+                            <img src="data:image/png;base64,${work.image_url}" alt="${work.title}" class="work-image">
+                            <h3>${work.title}</h3>
+                           <div class="resource-cit"> ${work.short_des.length > 100 ? work.short_des.substring(0, 100) + '...' : work.short_des}</div>
+                                </a>
+                        `;
+                        worksContainer.appendChild(workItem);
+                    });
+
+                    // Initialize Slick slider
+                    $(worksContainer).slick({
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        autoplay: true,
+                        autoplaySpeed: 2000,
+                        dots: true,
+                        arrows: true,
+                        responsive: [
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    slidesToShow: 2
+                                }
+                            },
+                            {
+                                breakpoint: 480,
+                                settings: {
+                                    slidesToShow: 1
+                                }
+                            }
+                        ]
+                    });
+                    observeNewElementsss();
+
+                }
+            } catch (error) {
+                console.error("Error fetching works:", error);
+            }
+        }
+
+        fetchWorks();
+    </script>
+    <script>
+        // Initialize the map with the new location
+        var map = L.map('map').setView([32.715735, -117.160975], 13);
+
+        // Add a tile layer (e.g., OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll(".resource-item");
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        } else {
+                            entry.target.classList.remove("visible");
+                        }
+                    });
+                },
+                {
+                    threshold: 0.2, // Trigger when 20% of the card is visible
+                }
+            );
+
+            cards.forEach((card) => observer.observe(card));
+        });
+        function observeNewElements() {
+            document.querySelectorAll(".resource-item").forEach((card) => {
+                observer.observe(card);
+            });
+        }
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    } else {
+                        entry.target.classList.remove("visible");
+                    }
+                });
+            },
+            {
+                threshold: 0.2, // Trigger when 20% of the card is visible
+            }
+        );
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll(".work-item");
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        } else {
+                            entry.target.classList.remove("visible");
+                        }
+                    });
+                },
+                {
+                    threshold: 0.2, // Trigger when 20% of the card is visible
+                }
+            );
+
+            cards.forEach((card) => observer.observe(card));
+        });
+
+        const observer1 = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    } else {
+                        entry.target.classList.remove("visible");
+                    }
+                });
+            },
+            {
+                threshold: 0.2, // Trigger when 20% of the card is visible
+            }
+        );
+
+        function observeNewElementsss() {
+            document.querySelectorAll(".work-item").forEach((card) => {
+                observer.observe(card);
+            });
+        }
+    </script>
+    <script>
+        // Function to scroll to the specified container
+        function scrollToContainer(containerId) {
+            const container = document.getElementById(containerId);
+            if (container) {
+                container.scrollIntoView({
+                    behavior: 'smooth',  // Smooth scrolling
+                    block: 'start'       // Aligns the element to the top of the page
+                });
+            }
+        }
+    </script>
+    <script>
+        let currentPage = 1; // Track current page
+        const pageSize = 6;  // Number of articles per request
+        const articlesList = document.querySelector('.resources-grids');
+
+        // Function to fetch articles
+        async function fetchArticles(page) {
+            try {
+                const response = await fetch(`https://api.strategicsolutionshrconsultants.com/api/home/getimages?page=${page}&limit=${pageSize}`);
+                const data = await response.json();
+                console.log(data, "datadata")
+                if (!Array.isArray(data.data) || data.data.length === 0) {
+                    loadMoreButton.style.display = 'none'; // Hide button if no more articles
+                    return;
+                }
+                // Append articles dynamically
+                data.data.forEach(article => {
+                    const articleElement = document.createElement('div');
+                    articleElement.classList.add('resource-item');
+                    const imageSrc = `data:image/png;base64,${article.image_url}`;
+                    articleElement.style.opacity = "0"; // Initially hidden
+
+                    articleElement.innerHTML = `
+                    <a href="innerpage.html?id=${article._id}" class="article-link">
+                        <img  src="${imageSrc}" alt="${article.title}" class="work-image">
+                        <h3>${article.title}</h3>
+                        <p>${article.short_des.length > 100 ? article.short_des.substring(0, 100) + '...' : article.short_des}</p>
+                    </a>
+                        `;
+
+                    articlesList.appendChild(articleElement);
+                    observeNewElements();
+
+                });
+                console.log(articlesList, "articlesList")
+
+            } catch (error) {
+                console.error('Error fetching articles:', error);
+            }
+        }
+
+        // Load initial articles
+        fetchArticles(currentPage);
+
+    </script>
+</body>
+
+</html>
